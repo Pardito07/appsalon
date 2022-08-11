@@ -1,0 +1,22 @@
+{
+    "name": "diegopardo/appsalon",
+    "description": "Proyecto PHP 8, MVC, SQL, SASS, Gulp",
+    "type": "project",
+    "authors": [
+        {
+            "name": "Diego Pardo",
+            "email": "diegopar03@gmail.com"
+        }
+    ],
+    "require": {
+        "phpmailer/phpmailer": "^6.6"
+    },
+    "autoload": {
+        "psr-4": {
+            "MVC\\" : "./",
+            "Controllers\\" : "./controllers",
+            "Model\\" : "./models",
+            "Classes\\" : "./classes"
+        }
+    }
+}
