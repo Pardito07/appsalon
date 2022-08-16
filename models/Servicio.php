@@ -18,5 +18,4 @@ class Servicio extends ActiveRecord{
         $this->precio = $args['precio'] ?? '';
     }
 
-    
 }
