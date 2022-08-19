@@ -343,9 +343,7 @@ async function reservarCita() {
                 title: 'Cita creada',
                 text: 'Tu cita fue creada correctamente'
             }).then( () => {
-                setTimeout(() => {
-                    window.location.reload();    
-                }, 3000);
+                window.location.reload(); 
             });
         }
         

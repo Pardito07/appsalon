@@ -21,14 +21,24 @@
     }
 
     .app{
-        width: 97%;
-        margin: auto;
+        width: 95%;
+        margin: 0 auto;
+        padding: 3rem 0;
+
+        @include m.tablet{
+            overflow: scroll;
+            overflow-x: hidden;
+        }
+    }
+
+    .app::-webkit-scrollbar{
+        display: none;
     }
 }
 
 .barra{
 
-    margin: v.$separacion 0;
+    margin: 4rem 0;
     text-align: center;
 
     @include m.tablet{
@@ -41,5 +51,23 @@
 
         @include m.boton(v.$negro, v.$blanco);
         margin: 0;
+    }
+}
+
+.barra-servicios{
+
+    margin-bottom: v.$separacion;
+
+    @include m.tablet{
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .boton{
+        margin-bottom: 1rem;
+
+        @include m.tablet{
+            margin: 0;
+        }
     }
 }

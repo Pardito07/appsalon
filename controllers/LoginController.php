@@ -60,7 +60,7 @@ class LoginController{
             session_start();
         }
 
-        $_SESSION = [];
+        session_abort();
 
         header('Location: /');
     }

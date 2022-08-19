@@ -3,8 +3,10 @@
 require_once __DIR__ . '/../includes/app.php';
 
 use Controllers\APIController;
+use Controllers\AdminController;
 use Controllers\CitaController;
 use Controllers\LoginController;
+use Controllers\ServiciosController;
 use MVC\Router;
 
 $router = new Router();
@@ -30,10 +32,20 @@ $router->get('/mensaje', [LoginController::class, 'mensaje']);
 
 //Zona privada
 $router->get('/cita', [CitaController::class, 'index']);
+$router->get('/admin', [AdminController::class, 'index']);
 
 //Servicios
 $router->get('/api/servicios', [APIController::class, 'index']);
 $router->post('/api/citas', [APIController::class, 'guardar']);
+$router->post('/api/eliminar', [APIController::class, 'eliminar']);
+
+//CRUD Admin
+$router->get('/servicios', [ServiciosController::class, 'index']);
+$router->get('/servicios/crear', [ServiciosController::class, 'crear']);
+$router->post('/servicios/crear', [ServiciosController::class, 'crear']);
+$router->get('/servicios/actualizar', [ServiciosController::class, 'actualizar']);
+$router->post('/servicios/actualizar', [ServiciosController::class, 'actualizar']);
+$router->post('/servicios/eliminar', [ServiciosController::class, 'eliminar']);
 
 // Comprueba y valida las rutas, que existan y les asigna las funciones del Controlador
 $router->comprobarRutas();
