@@ -1,0 +1,11 @@
+@use 'base/variables' as v;
+
+.barra{
+    p{
+        font-weight: v.$bold;
+    }
+
+    span{
+        font-weight: v.$regular;
+    }
+}

@@ -3,7 +3,4 @@ vendor
 .DS_Store
 DB.sql
 /includes/.env
-src/
-gulpfile.js
-package-lock.json
-package.json
+

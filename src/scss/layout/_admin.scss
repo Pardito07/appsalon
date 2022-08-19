@@ -1,0 +1,53 @@
+@use 'base/variables' as v;
+
+.admin-citas{
+    margin-top: v.$separacion;
+
+    .citas{
+        list-style: none;
+        padding: 0;
+    
+        li{
+            padding: 1rem;
+            border-top: 1px solid v.$blanco;
+            p{
+                font-weight: v.$bold;
+                color: v.$azul;
+            }
+            span,
+            .servicio{
+                font-weight: v.$regular;
+                color: v.$blanco;
+            }
+        }
+    }
+}
+
+.servicios{
+
+    list-style: none;
+    padding: 0;
+
+    li{
+        padding: 1rem;
+        border-top: 1px solid v.$blanco;
+        p{
+            font-weight: v.$bold;
+            color: v.$azul;
+        }
+        span,
+        .servicio{
+            font-weight: v.$regular;
+            color: v.$blanco;
+        }
+    }
+
+    .acciones{
+        margin: 0;
+    }
+
+    .boton,
+    .boton-eliminar{
+        margin: 0;
+    }
+}
