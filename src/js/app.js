@@ -1,7 +1,6 @@
 let paso = 1;
 const pasoInicial = 1;
 const pasoFinal = 3;
-const server = 'https://evening-escarpment-67357.herokuapp.com/api/servicios';
 
 const cita = {
     id: '',
@@ -115,10 +114,12 @@ function paginaSiguiente(){
     });
 }
 
+const serverServicios = 'https://evening-escarpment-67357.herokuapp.com/api/servicios';
+
 async function consultarAPI(){
 
     try {
-        const url = `${server}/api/servicios`;
+        const url = `${serverServicios}`;
 
         const resultado = await fetch(url);
         const servicios = await resultado.json();
@@ -316,6 +317,8 @@ function mostrarResumen(){
     resumen.appendChild(botonReservar)
 }
 
+const serverCitas = 'https://evening-escarpment-67357.herokuapp.com/api/citas';
+
 async function reservarCita() {
 
     const { fecha, hora, servicios, id } = cita;
@@ -329,7 +332,7 @@ async function reservarCita() {
     datos.append('servicios', idServicios);
 
     try {
-        const url = `${server}/api/citas`;
+        const url = `${serverCitas}`;
 
         const respuesta = await fetch(url, {
             method: 'POST',
