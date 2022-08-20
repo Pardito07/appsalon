@@ -19,15 +19,23 @@ $router->get('/logout', [LoginController::class, 'logout']);
 //Recuperar Password
 $router->get('/olvide', [LoginController::class, 'olvide']);
 $router->post('/olvide', [LoginController::class, 'olvide']);
-$router->get('/recuperar', [LoginController::class, 'recuperar']);
-$router->post('/recuperar', [LoginController::class, 'recuperar']);
+
+if (isset($_GET["token"])) {
+    $token = $_GET["token"];
+    $router->get("/recuperar?token=$token", [LoginController::class, "recuperar"]);
+    $router->post("/recuperar?token=$token", [LoginController::class, "recuperar"]);
+}
 
 //Crear Cuenta
 $router->get('/crear-cuenta', [LoginController::class, 'crear']);
 $router->post('/crear-cuenta', [LoginController::class, 'crear']);
 
 //Confirmar cuenta
-$router->get('/confirmar-cuenta', [LoginController::class, 'confirmar']);
+if (isset($_GET["token"])) {
+    $token = $_GET["token"];
+    $router->get("/reestablecer?token=$token", [LoginController::class, "confirmar"]);
+}
+
 $router->get('/mensaje', [LoginController::class, 'mensaje']);
 
 //Zona privada
